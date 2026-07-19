@@ -1,0 +1,2 @@
+const steps=["Demande reçue","Convoyeur affecté","Prise en charge","En livraison","Livré"];
+export function RouteStatusDemo(){return <div className="status-card"><div className="status-top"><span>Exemple de suivi</span><small>Démonstration</small></div><p className="route-name">Paris <span>→</span> Lyon</p><ol>{steps.map((s,i)=><li key={s} className={i<2?"done":""}><span>{i<2?"✓":i+1}</span>{s}</li>)}</ol></div>}

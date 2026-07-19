@@ -1,0 +1,3 @@
+import { z } from "zod";
+export const quoteSchema=z.object({profile:z.enum(["Entreprise","Particulier"]),departure:z.string().min(3,"Indiquez une adresse de départ"),arrival:z.string().min(3,"Indiquez une adresse d’arrivée"),vehicle:z.string().min(2,"Précisez le véhicule"),running:z.enum(["Oui","Non"]),date:z.string().min(1,"Choisissez une date"),name:z.string().min(2,"Indiquez votre nom"),company:z.string().optional(),phone:z.string().min(6,"Numéro incomplet"),email:z.string().email("Adresse e-mail invalide"),comment:z.string().optional(),consent:z.literal(true,{message:"Votre accord est nécessaire"})});
+export type QuoteData=z.infer<typeof quoteSchema>;

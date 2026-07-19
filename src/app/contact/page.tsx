@@ -1,0 +1,3 @@
+import type { Metadata } from "next";import { SimpleForm } from "@/components/forms/SimpleForm";import { brand } from "@/config/brand";
+export const metadata:Metadata={title:"Contact",description:"Contactez notre équipe pour une demande de convoyage automobile.",alternates:{canonical:"/contact"}};
+export default function Page(){return <div className="form-page contact-page"><div className="page-intro"><span className="eyebrow">Contact</span><h1>Une question, un trajet, une urgence opérationnelle ?</h1><p>Décrivez votre besoin. Les coordonnées directes apparaîtront ici dès qu’elles auront été configurées.</p>{brand.phone&&<a href={`tel:${brand.phone}`}>{brand.phone}</a>}{brand.email&&<a href={`mailto:${brand.email}`}>{brand.email}</a>}</div><SimpleForm/></div>}
