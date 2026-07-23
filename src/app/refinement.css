@@ -150,6 +150,12 @@ p { text-wrap: pretty; }
 .audiences h2 { margin-top: 80px; font-size: clamp(2.2rem, 3vw, 3.25rem); font-variation-settings: "wght" 520; }
 .audiences p { max-width: 490px; font-size: .93rem; line-height: 1.75; }
 .audiences a { font-size: .78rem; }
+.audiences article:not(.light) h2 { color: #fbfaf7; }
+.audiences article:not(.light) p { color: #d7e5eb; opacity: 1; }
+.audiences article:not(.light) > span,
+.audiences article:not(.light) a { color: #f4f1e9; }
+.audiences article:not(.light) > svg { color: #b9ddee; opacity: .62; }
+.audiences article.light h2 { color: var(--ink); }
 
 .network-section { padding: clamp(55px, 6vw, 95px); border-radius: 8px; background: #eaf3f5; }
 .france-map svg { filter: drop-shadow(0 18px 24px rgba(11, 32, 51, .07)); }
@@ -239,3 +245,40 @@ footer { background: #f1eee7; padding-top: 90px; }
   .wizard { padding: 28px 20px; }
   .simple-form { padding: 32px 20px; }
 }
+
+.address-field { position: relative; }
+.address-input-wrap { position: relative; display: block; }
+.address-input-wrap > svg:first-child {
+  position: absolute; left: 14px; top: 50%; width: 19px; height: 19px;
+  transform: translateY(-50%); color: var(--slate); pointer-events: none;
+}
+.address-input-wrap input { padding-left: 44px; padding-right: 45px; }
+.address-input-wrap input::-webkit-search-cancel-button { display: none; }
+.address-loader {
+  position: absolute; right: 15px; top: 50%; width: 20px; height: 20px;
+  transform: translateY(-50%); color: var(--navy);
+  animation: address-spin .8s linear infinite;
+}
+.address-dropdown {
+  position: absolute; z-index: 20; top: calc(100% - 7px); left: 0; right: 0;
+  display: block; background: #fff; border: 1px solid var(--line); border-radius: 10px;
+  box-shadow: 0 18px 45px rgba(11,32,51,.16); overflow: hidden;
+}
+.address-dropdown > [role="listbox"] { display: block; max-height: 285px; overflow-y: auto; }
+.address-dropdown button {
+  width: 100%; display: flex; align-items: flex-start; gap: 12px; padding: 13px 15px;
+  border: 0; border-bottom: 1px solid var(--line); background: #fff;
+  color: var(--midnight); text-align: left;
+}
+.address-dropdown button:last-of-type { border-bottom: 0; }
+.address-dropdown button:hover, .address-dropdown button.active { background: var(--powder); }
+.address-dropdown button > svg {
+  width: 18px; height: 18px; flex: 0 0 auto; margin-top: 3px; color: var(--slate);
+}
+.address-dropdown button > span { display: grid; min-width: 0; }
+.address-dropdown strong { font-size: .88rem; font-weight: 700; line-height: 1.35; }
+.address-dropdown small { font-size: .72rem; color: var(--slate); font-weight: 500; }
+.address-message { display: block; padding: 15px; color: var(--slate); font-size: .8rem; font-weight: 500; }
+.address-field:focus-within { z-index: 21; }
+.vehicle-data-source { margin: 12px 0 0; color: var(--slate); font-size: .7rem; }
+@keyframes address-spin { to { transform: translateY(-50%) rotate(360deg); } }
