@@ -1,0 +1,12 @@
+.container {
+  width: 100%;
+  min-width: 0;
+  min-height: 650px;
+}
+
+.container :global(iframe) {
+  display: block;
+  width: 100% !important;
+  max-width: 100%;
+  border: 0;
+}
