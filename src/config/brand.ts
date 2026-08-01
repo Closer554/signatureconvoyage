@@ -2,10 +2,12 @@ export type BusinessHours = { day: number; label: string; open: string; close: s
 
 export const brand = {
   brandName: "Signature Convoyage",
-  legalName: null as string | null,
+  legalName: "SERVICE VOITURIER PARIS" as string | null,
+  foundingYear: null as number | null,
+  experienceYears: null as number | null,
   phone: null as string | null,
-  email: null as string | null,
-  address: null as string | null,
+  email: "contact@paris-service-voiturier.com" as string | null,
+  address: "5 Avenue Chausson, 92230 Gennevilliers, France" as string | null,
   responseSlaMinutes: null as number | null,
   businessHours: [] as BusinessHours[],
   emergencyPhone: null as string | null,

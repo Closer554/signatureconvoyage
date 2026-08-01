@@ -246,6 +246,16 @@ footer { background: #f1eee7; padding-top: 90px; }
   .simple-form { padding: 32px 20px; }
 }
 
+.legal-updated { color: var(--slate); font-size: .85rem; margin-bottom: 45px; }
+.legal-page ul { color: var(--slate); padding-left: 22px; }
+.legal-page a { color: var(--navy); text-decoration: underline; text-underline-offset: 3px; }
+.legal-table-wrap { overflow-x: auto; margin: 25px 0; }
+.legal-table { width: 100%; min-width: 760px; border-collapse: collapse; font-size: .88rem; }
+.legal-table th, .legal-table td { padding: 16px; border: 1px solid var(--line); text-align: left; vertical-align: top; }
+.legal-table th { background: var(--powder); }
+.privacy-notice { color: var(--slate); font-size: .75rem; line-height: 1.55; margin: 0; }
+.privacy-notice a { text-decoration: underline; text-underline-offset: 2px; }
+
 .address-field { position: relative; }
 .address-input-wrap { position: relative; display: block; }
 .address-input-wrap > svg:first-child {
@@ -282,3 +292,26 @@ footer { background: #f1eee7; padding-top: 90px; }
 .address-field:focus-within { z-index: 21; }
 .vehicle-data-source { margin: 12px 0 0; color: var(--slate); font-size: .7rem; }
 @keyframes address-spin { to { transform: translateY(-50%) rotate(360deg); } }
+
+.about-intro {
+  display: grid; grid-template-columns: .65fr 1.35fr; gap: 90px;
+  padding: 120px 0; border-bottom: 1px solid var(--line); align-items: start;
+}
+.about-year {
+  font-family: var(--font-serif), serif; font-size: clamp(3.5rem, 7vw, 7rem);
+  line-height: 1; color: var(--champagne);
+}
+.about-intro h2 { max-width: 700px; }
+.about-intro p { max-width: 720px; color: var(--slate); font-size: 1.05rem; }
+.about-manifesto {
+  background: var(--midnight); color: #fff; border-radius: var(--radius);
+  padding: clamp(40px, 6vw, 80px); margin-bottom: 110px;
+}
+.about-manifesto h2 { max-width: 900px; }
+.about-manifesto p { max-width: 760px; color: var(--glacier); margin-bottom: 30px; }
+
+@media (max-width: 700px) {
+  .about-intro { grid-template-columns: 1fr; gap: 45px; padding: 75px 0; }
+  .about-year { font-size: 3.5rem; }
+  .about-manifesto { margin-inline: -20px; border-radius: 0; margin-bottom: 75px; }
+}
