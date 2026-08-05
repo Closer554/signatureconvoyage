@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Check } from "lucide-react";
 import { JotformDriverForm } from "@/components/forms/JotformDriverForm";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
@@ -28,15 +29,15 @@ export default function Page() {
       <div className="page-shell">
         <section className="section">
           <SectionHeading eyebrow="Le partenariat" title="Un cadre de travail lisible." />
-          <div className="feature-grid">
-            {benefits.map((benefit) => <article key={benefit}><h3>{benefit}</h3></article>)}
-          </div>
+          <ul className="driver-benefits">
+            {benefits.map((benefit) => <li key={benefit}><Check aria-hidden="true" /><span>{benefit}</span></li>)}
+          </ul>
         </section>
         <section className="split-section driver-application">
           <div className="driver-application-intro">
             <span className="eyebrow">Votre profil</span>
             <h2>Envie de prendre la route avec nous&nbsp;?</h2>
-            <p>Présentez-nous votre parcours, vos disponibilités et vos zones de déplacement. Notre équipe étudiera votre candidature et vous recontactera pour échanger sur les missions et leurs conditions.</p>
+            <p>Notre équipe étudiera votre candidature et vous recontactera pour échanger sur les missions et leurs conditions.</p>
           </div>
           <JotformDriverForm />
         </section>
