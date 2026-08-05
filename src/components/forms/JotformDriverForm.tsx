@@ -22,5 +22,5 @@ export function JotformDriverForm() {
     return () => container.replaceChildren();
   }, []);
 
-  return <><p className="privacy-notice">Les informations saisies sont traitées par SERVICE VOITURIER PARIS afin d’étudier votre candidature. Le formulaire est fourni par Jotform. <Link href="/politique-confidentialite" target="_blank">Consulter vos droits et les modalités de conservation</Link>.</p><div ref={containerRef} className={styles.container} aria-label="Formulaire de candidature convoyeur" /></>;
+  return <div className={styles.formPanel}><div className={styles.formHeader}><span>Candidature</span><p>Complétez le formulaire ci-dessous. Nous reviendrons vers vous après étude de votre profil.</p></div><div ref={containerRef} className={styles.container} aria-label="Formulaire de candidature convoyeur" /><p className="privacy-notice">Vos informations sont utilisées par SERVICE VOITURIER PARIS uniquement pour étudier votre candidature. Le formulaire est hébergé par Jotform. <Link href="/politique-confidentialite" target="_blank">En savoir plus sur vos données et vos droits</Link>.</p></div>;
 }

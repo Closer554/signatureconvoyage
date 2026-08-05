@@ -32,8 +32,12 @@ export default function Page() {
             {benefits.map((benefit) => <article key={benefit}><h3>{benefit}</h3></article>)}
           </div>
         </section>
-        <section className="split-section">
-          <SectionHeading eyebrow="Votre profil" title="Faisons connaissance." text="Aucune promesse de volume ou de rémunération n’est affichée : chaque condition doit être présentée et acceptée clairement." />
+        <section className="split-section driver-application">
+          <div className="driver-application-intro">
+            <span className="eyebrow">Votre profil</span>
+            <h2>Envie de prendre la route avec nous&nbsp;?</h2>
+            <p>Présentez-nous votre parcours, vos disponibilités et vos zones de déplacement. Notre équipe étudiera votre candidature et vous recontactera pour échanger sur les missions et leurs conditions.</p>
+          </div>
           <JotformDriverForm />
         </section>
       </div>
