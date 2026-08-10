@@ -69,7 +69,22 @@ p { text-wrap: pretty; }
 }
 .desktop-nav { gap: 32px; font-size: .77rem; font-variation-settings: "wght" 570; letter-spacing: -.01em; }
 .header-actions .btn { min-height: 43px; }
-.driver-link { color: var(--slate); font-size: .72rem; }
+.driver-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 43px;
+  padding-inline: 19px;
+  border: 1px solid var(--ink);
+  border-radius: 7px;
+  background: transparent;
+  color: var(--ink);
+  font-size: .78rem;
+  font-variation-settings: "wght" 680;
+  letter-spacing: -.01em;
+  transition: transform .2s, background .2s;
+}
+.driver-link:hover { background: var(--ink); color: #fff; transform: translateY(-1px); }
 
 .btn {
   min-height: 50px;
@@ -131,7 +146,7 @@ p { text-wrap: pretty; }
   filter: saturate(.72) contrast(1.04);
 }
 .editorial-photo:after { inset: 18px; border-radius: 165px 3px 165px 3px; opacity: .65; }
-.editorial-photo > span { left: 54px; bottom: 56px; font-size: 1.65rem; font-variation-settings: "wght" 360, "opsz" 40; }
+.editorial-photo > span { display: none; }
 .status-card { right: -35px; bottom: -25px; padding: 28px; border-radius: 8px; box-shadow: var(--soft-shadow); }
 .status-top, .route-name { font-variation-settings: "wght" 630; }
 
