@@ -22,5 +22,5 @@ export function JotformDriverForm() {
     return () => container.replaceChildren();
   }, []);
 
-  return <div className={styles.formPanel}><div className={styles.formHeader}><span>Candidature</span><p>Complétez le formulaire ci-dessous. Nous reviendrons vers vous après étude de votre profil.</p></div><div ref={containerRef} className={styles.container} aria-label="Formulaire de candidature convoyeur" /><p className="privacy-notice">Vos informations sont utilisées par SERVICE VOITURIER PARIS uniquement pour étudier votre candidature. Le formulaire est hébergé par Jotform. <Link href="/politique-confidentialite" target="_blank">En savoir plus sur vos données et vos droits</Link>.</p></div>;
+  return <div className={styles.formPanel}><div className={styles.formHeader}><span>Candidature</span><p>Complétez le formulaire ci-dessous. Nous reviendrons vers vous après étude de votre profil.</p></div><div ref={containerRef} className={styles.container} aria-label="Formulaire de candidature convoyeur" /><p className="privacy-notice">Vos informations sont utilisées par Signature Convoyage uniquement pour étudier votre candidature. Le formulaire est hébergé par Jotform. <Link href="/politique-confidentialite" target="_blank">En savoir plus sur vos données et vos droits</Link>.</p></div>;
 }
