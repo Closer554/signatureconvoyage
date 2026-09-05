@@ -20,7 +20,7 @@ npm run build
 - `src/content/site.ts` : services, qualité et cas d’usage
 - `src/data/network.ts` : points de la carte
 - `src/data/testimonials.ts` : témoignages autorisés uniquement
-- `src/lib/lead-service.ts` : abstraction webhook / simulation de développement
+- `src/lib/lead-service.ts` : envoi des demandes de devis par Resend
 
 ## Personnalisation
 
@@ -33,11 +33,13 @@ npm run build
 - **Logos et statistiques** : ajouter de vrais fichiers autorisés et des chiffres vérifiés dans `brand.ts`.
 - **Photos** : la photo éditoriale distante de démonstration dans `globals.css` doit être remplacée par un fichier optimisé et licencié dans `public/images` avant publication. Le dégradé reste un fallback visuel.
 
-## Formulaires et CRM
+## Formulaires et e-mails
 
-Le devis utilise une route serveur et `src/lib/lead-service.ts`. En développement sans webhook, l’envoi est une simulation explicite dans les logs. En production sans webhook, aucun faux succès n’est retourné.
+Le devis utilise la route serveur `/api/leads` et le SDK Resend. La clé API reste côté serveur et chaque demande est envoyée dans un e-mail HTML, accompagné d’une version texte. L’adresse du demandeur est configurée comme adresse de réponse.
 
-Définir `LEAD_WEBHOOK_URL` dans `.env.local` pour transmettre les demandes. Valider le format attendu, l’authentification, le stockage, les durées de conservation et la conformité RGPD avec le futur CRM. Les formulaires courts sont des démonstrations front-end et doivent être raccordés au même service avant publication.
+Copier `.env.example` vers `.env.local`, puis renseigner `RESEND_API_KEY`, `RESEND_FROM_EMAIL` et `RESEND_TO_EMAIL`. Le domaine de `RESEND_FROM_EMAIL` doit être vérifié dans Resend. En l’absence de configuration ou si Resend refuse l’envoi, le formulaire retourne une erreur et n’affiche pas de faux succès.
+
+Les formulaires courts sont encore des démonstrations front-end et doivent être raccordés à un service avant publication. Valider également les durées de conservation et la conformité RGPD des demandes envoyées par e-mail.
 
 ## Avant mise en production
 
@@ -55,7 +57,8 @@ Définir `LEAD_WEBHOOK_URL` dans `.env.local` pour transmettre les demandes. Val
 - [ ] Témoignages autorisés
 - [ ] Logos clients autorisés
 - [ ] Statistiques vérifiées
-- [ ] Webhook ou CRM pour tous les formulaires
+- [ ] Configuration Resend testée en production
+- [ ] Service d’envoi raccordé aux autres formulaires
 - [ ] Domaine et URL `metadataBase`, sitemap et robots
 - [ ] Analytics et consentement éventuel
 - [ ] Test réel des notifications et du traitement des erreurs

@@ -16,6 +16,4 @@ export const brand = {
   customerLogos: [] as { src: string; alt: string }[],
   insuranceCopy: null as string | null,
   socialLinks: [] as { label: string; url: string }[],
-  leadWebhookUrl: process.env.LEAD_WEBHOOK_URL ?? null,
-  crmProvider: null as string | null,
 };

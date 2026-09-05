@@ -109,7 +109,7 @@ export function VehicleAutocomplete({
 
   return (
     <label className="field address-field">
-      {label}
+      {label}{resource === "models" && " (facultatif)"}
       <span className="address-input-wrap">
         <CarFront aria-hidden="true" />
         <input
