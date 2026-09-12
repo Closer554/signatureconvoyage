@@ -33,6 +33,12 @@ npm run build
 - **Logos et statistiques** : ajouter de vrais fichiers autorisés et des chiffres vérifiés dans `brand.ts`.
 - **Photos** : la photo éditoriale distante de démonstration dans `globals.css` doit être remplacée par un fichier optimisé et licencié dans `public/images` avant publication. Le dégradé reste un fallback visuel.
 
+## Aperçus des liens partagés
+
+Le logo `public/logo.png` est utilisé par les métadonnées Open Graph et Twitter pour les aperçus des liens. Le domaine officiel utilisé par défaut est `https://signature-convoyage.fr`. Si `NEXT_PUBLIC_SITE_URL` est définie, sa valeur remplace ce domaine : la renseigner avec `https://signature-convoyage.fr` dans l’environnement de compilation. Après toute modification, relancer `npm run build` et redéployer le site : les métadonnées sont générées pendant le build.
+
+Vérifier que l’URL absolue indiquée dans la balise `og:image` renvoie bien le logo (HTTP 200 et `Content-Type: image/png`).
+
 ## Formulaires et e-mails
 
 Le devis utilise la route serveur `/api/leads` et le SDK Resend. La clé API reste côté serveur et chaque demande est envoyée dans un e-mail HTML, accompagné d’une version texte. L’adresse du demandeur est configurée comme adresse de réponse.

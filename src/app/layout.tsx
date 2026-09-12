@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     siteName,
     title: `${siteName} | Convoyage automobile en France`,
     description: siteDescription,
-    images: [{ url: "/logo.png", width: 2000, height: 2000, alt: `Logo ${siteName}` }],
+    images: [{ url: "/logo.png", type: "image/png", width: 2000, height: 2000, alt: `Logo ${siteName}` }],
   },
   twitter: {
     card: "summary_large_image",
