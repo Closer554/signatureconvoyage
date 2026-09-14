@@ -24,7 +24,7 @@ npm run build
 
 ## Personnalisation
 
-- **Nom et identité** : modifier `brandName` dans `src/config/brand.ts`. Le wordmark et le monogramme isolé sont dans `src/components/layout/Logo.tsx`.
+- **Nom et identité** : modifier `brandName` dans `src/config/brand.ts`. Le logo source est `public/logo.png`. Le pack et son aperçu sont dans `public/images/logos`, les références du site dans `src/config/brand-assets.ts`. Régénérer les exports avec `npm run brand:build` ; les instructions de mise à jour de l’archive se trouvent dans `public/images/logos/LISEZ-MOI.md`.
 - **Couleurs** : modifier les variables en tête de `src/app/globals.css`.
 - **Téléphone, e-mail, adresse** : renseigner les valeurs actuellement `null` dans `brand.ts`. Les blocs restent masqués sinon.
 - **Horaires et SLA** : renseigner `businessHours` et `responseSlaMinutes` uniquement après validation opérationnelle.
@@ -35,9 +35,9 @@ npm run build
 
 ## Aperçus des liens partagés
 
-Le logo `public/logo.png` est utilisé par les métadonnées Open Graph et Twitter pour les aperçus des liens. Le domaine officiel utilisé par défaut est `https://signature-convoyage.fr`. Si `NEXT_PUBLIC_SITE_URL` est définie, sa valeur remplace ce domaine : la renseigner avec `https://signature-convoyage.fr` dans l’environnement de compilation. Après toute modification, relancer `npm run build` et redéployer le site : les métadonnées sont générées pendant le build.
+L’image `public/images/logos/reseaux/partage-1200x630.jpg` est utilisée par les métadonnées Open Graph et Twitter pour les aperçus des liens. Les icônes du navigateur et du manifeste se trouvent dans `public/images/logos/icones`. Le domaine officiel utilisé par défaut est `https://signature-convoyage.fr`. Si `NEXT_PUBLIC_SITE_URL` est définie, sa valeur remplace ce domaine : la renseigner avec `https://signature-convoyage.fr` dans l’environnement de compilation. Après toute modification, relancer `npm run build` et redéployer le site : les métadonnées sont générées pendant le build. Incrémenter la version dans `src/config/brand-assets.ts` pour renouveler les URL des assets après une modification du logo.
 
-Vérifier que l’URL absolue indiquée dans la balise `og:image` renvoie bien le logo (HTTP 200 et `Content-Type: image/png`).
+Vérifier que l’URL absolue indiquée dans la balise `og:image` renvoie bien le logo (HTTP 200 et `Content-Type: image/jpeg`).
 
 ## Formulaires et e-mails
 

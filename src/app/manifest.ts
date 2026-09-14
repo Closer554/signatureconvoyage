@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { siteDescription, siteName } from "@/config/site";
+import { brandAssets } from "@/config/brand-assets";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
@@ -12,8 +13,9 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: "#0b2033",
     lang: "fr-FR",
     icons: [
-      { src: "/logo.png", sizes: "2000x2000", type: "image/png", purpose: "any" },
-      { src: "/logo.png", sizes: "2000x2000", type: "image/png", purpose: "maskable" },
+      { src: brandAssets.icon(192), sizes: "192x192", type: "image/png", purpose: "any" },
+      { src: brandAssets.icon(512), sizes: "512x512", type: "image/png", purpose: "any" },
+      { src: brandAssets.maskableIcon, sizes: "512x512", type: "image/png", purpose: "maskable" },
     ],
   };
 }

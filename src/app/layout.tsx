@@ -7,6 +7,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { MobileActionBar } from "@/components/layout/MobileActionBar";
 import { brand } from "@/config/brand";
+import { brandAssets } from "@/config/brand-assets";
 import { siteDescription, siteName, siteUrl } from "@/config/site";
 
 export const metadata: Metadata = {
@@ -21,9 +22,13 @@ export const metadata: Metadata = {
   publisher: brand.legalName ?? siteName,
   alternates: { canonical: "/", languages: { "fr-FR": "/" } },
   icons: {
-    icon: [{ url: "/logo.png", type: "image/png", sizes: "2000x2000" }],
-    apple: [{ url: "/logo.png", type: "image/png", sizes: "2000x2000" }],
-    shortcut: "/logo.png",
+    icon: [
+      { url: brandAssets.icon(16), type: "image/png", sizes: "16x16" },
+      { url: brandAssets.icon(32), type: "image/png", sizes: "32x32" },
+      { url: brandAssets.favicon, type: "image/svg+xml", sizes: "any" },
+    ],
+    apple: [{ url: brandAssets.icon(180), type: "image/png", sizes: "180x180" }],
+    shortcut: brandAssets.icon(32),
   },
   manifest: "/manifest.webmanifest",
   openGraph: {
@@ -33,13 +38,13 @@ export const metadata: Metadata = {
     siteName,
     title: `${siteName} | Convoyage automobile en France`,
     description: siteDescription,
-    images: [{ url: "/logo.png", type: "image/png", width: 2000, height: 2000, alt: `Logo ${siteName}` }],
+    images: [{ url: brandAssets.share.src, type: "image/jpeg", width: brandAssets.share.width, height: brandAssets.share.height, alt: `Logo ${siteName}` }],
   },
   twitter: {
     card: "summary_large_image",
     title: `${siteName} | Convoyage automobile en France`,
     description: siteDescription,
-    images: ["/logo.png"],
+    images: [brandAssets.share.src],
   },
   robots: {
     index: true,
@@ -58,8 +63,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         name: siteName,
         legalName: brand.legalName ?? siteName,
         url: siteUrl,
-        logo: `${siteUrl}/logo.png`,
-        image: `${siteUrl}/logo.png`,
+        logo: `${siteUrl}${brandAssets.logo.src}`,
+        image: `${siteUrl}${brandAssets.share.src}`,
         description: siteDescription,
         ...(brand.email && { email: brand.email }),
         ...(brand.phone && { telephone: brand.phone }),

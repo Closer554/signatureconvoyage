@@ -1,0 +1,361 @@
+{
+  "source": "public/logo.png",
+  "sourceSha256": "fb165f23e5e38d6f9b6b8fa5bdce42b080cbbcbf30fc120b3a46642dbfbaeff6",
+  "palette": {
+    "navy": "#0b2033",
+    "gold": "#b79a68",
+    "cream": "#fbfaf7"
+  },
+  "files": [
+    {
+      "file": "webp/logo-complet-blanc-transparent-1024.webp",
+      "width": 1024,
+      "height": 512,
+      "format": "webp",
+      "alpha": true
+    },
+    {
+      "file": "webp/logo-complet-transparent-1024.webp",
+      "width": 1024,
+      "height": 512,
+      "format": "webp",
+      "alpha": true
+    },
+    {
+      "file": "webp/logo-horizontal-blanc-transparent-1024.webp",
+      "width": 1024,
+      "height": 196,
+      "format": "webp",
+      "alpha": true
+    },
+    {
+      "file": "webp/logo-horizontal-transparent-1024.webp",
+      "width": 1024,
+      "height": 196,
+      "format": "webp",
+      "alpha": true
+    },
+    {
+      "file": "webp/repere-blanc-transparent-1024.webp",
+      "width": 1024,
+      "height": 1024,
+      "format": "webp",
+      "alpha": true
+    },
+    {
+      "file": "webp/repere-transparent-1024.webp",
+      "width": 1024,
+      "height": 1024,
+      "format": "webp",
+      "alpha": true
+    },
+    {
+      "file": "webp/symbole-blanc-transparent-1024.webp",
+      "width": 1024,
+      "height": 329,
+      "format": "webp",
+      "alpha": true
+    },
+    {
+      "file": "webp/symbole-transparent-1024.webp",
+      "width": 1024,
+      "height": 329,
+      "format": "webp",
+      "alpha": true
+    },
+    {
+      "file": "sources/logo-original.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "png",
+      "alpha": false
+    },
+    {
+      "file": "reseaux/avatar-1080.png",
+      "width": 1080,
+      "height": 1080,
+      "format": "png",
+      "alpha": true
+    },
+    {
+      "file": "reseaux/partage-1200x630.jpg",
+      "width": 1200,
+      "height": 630,
+      "format": "jpeg",
+      "alpha": false
+    },
+    {
+      "file": "png/logo-complet-blanc-transparent-1024.png",
+      "width": 1024,
+      "height": 512,
+      "format": "png",
+      "alpha": true
+    },
+    {
+      "file": "png/logo-complet-blanc-transparent-2048.png",
+      "width": 2048,
+      "height": 1024,
+      "format": "png",
+      "alpha": true
+    },
+    {
+      "file": "png/logo-complet-blanc-transparent-4096.png",
+      "width": 4096,
+      "height": 2048,
+      "format": "png",
+      "alpha": true
+    },
+    {
+      "file": "png/logo-complet-transparent-1024.png",
+      "width": 1024,
+      "height": 512,
+      "format": "png",
+      "alpha": true
+    },
+    {
+      "file": "png/logo-complet-transparent-2048.png",
+      "width": 2048,
+      "height": 1024,
+      "format": "png",
+      "alpha": true
+    },
+    {
+      "file": "png/logo-complet-transparent-4096.png",
+      "width": 4096,
+      "height": 2048,
+      "format": "png",
+      "alpha": true
+    },
+    {
+      "file": "png/logo-horizontal-blanc-transparent-1024.png",
+      "width": 1024,
+      "height": 196,
+      "format": "png",
+      "alpha": true
+    },
+    {
+      "file": "png/logo-horizontal-blanc-transparent-2048.png",
+      "width": 2048,
+      "height": 393,
+      "format": "png",
+      "alpha": true
+    },
+    {
+      "file": "png/logo-horizontal-blanc-transparent-4096.png",
+      "width": 4096,
+      "height": 785,
+      "format": "png",
+      "alpha": true
+    },
+    {
+      "file": "png/logo-horizontal-transparent-1024.png",
+      "width": 1024,
+      "height": 196,
+      "format": "png",
+      "alpha": true
+    },
+    {
+      "file": "png/logo-horizontal-transparent-2048.png",
+      "width": 2048,
+      "height": 393,
+      "format": "png",
+      "alpha": true
+    },
+    {
+      "file": "png/logo-horizontal-transparent-4096.png",
+      "width": 4096,
+      "height": 785,
+      "format": "png",
+      "alpha": true
+    },
+    {
+      "file": "png/repere-blanc-transparent-1024.png",
+      "width": 1024,
+      "height": 1024,
+      "format": "png",
+      "alpha": true
+    },
+    {
+      "file": "png/repere-blanc-transparent-2048.png",
+      "width": 2048,
+      "height": 2048,
+      "format": "png",
+      "alpha": true
+    },
+    {
+      "file": "png/repere-blanc-transparent-4096.png",
+      "width": 4096,
+      "height": 4096,
+      "format": "png",
+      "alpha": true
+    },
+    {
+      "file": "png/repere-transparent-1024.png",
+      "width": 1024,
+      "height": 1024,
+      "format": "png",
+      "alpha": true
+    },
+    {
+      "file": "png/repere-transparent-2048.png",
+      "width": 2048,
+      "height": 2048,
+      "format": "png",
+      "alpha": true
+    },
+    {
+      "file": "png/repere-transparent-4096.png",
+      "width": 4096,
+      "height": 4096,
+      "format": "png",
+      "alpha": true
+    },
+    {
+      "file": "png/symbole-blanc-transparent-1024.png",
+      "width": 1024,
+      "height": 329,
+      "format": "png",
+      "alpha": true
+    },
+    {
+      "file": "png/symbole-blanc-transparent-2048.png",
+      "width": 2048,
+      "height": 658,
+      "format": "png",
+      "alpha": true
+    },
+    {
+      "file": "png/symbole-blanc-transparent-4096.png",
+      "width": 4096,
+      "height": 1317,
+      "format": "png",
+      "alpha": true
+    },
+    {
+      "file": "png/symbole-transparent-1024.png",
+      "width": 1024,
+      "height": 329,
+      "format": "png",
+      "alpha": true
+    },
+    {
+      "file": "png/symbole-transparent-2048.png",
+      "width": 2048,
+      "height": 658,
+      "format": "png",
+      "alpha": true
+    },
+    {
+      "file": "png/symbole-transparent-4096.png",
+      "width": 4096,
+      "height": 1317,
+      "format": "png",
+      "alpha": true
+    },
+    {
+      "file": "jpg/logo-complet-fond-blanc-2048.jpg",
+      "width": 2048,
+      "height": 1024,
+      "format": "jpeg",
+      "alpha": false
+    },
+    {
+      "file": "jpg/logo-complet-fond-creme-2048.jpg",
+      "width": 2048,
+      "height": 1024,
+      "format": "jpeg",
+      "alpha": false
+    },
+    {
+      "file": "jpg/logo-horizontal-fond-blanc-2048.jpg",
+      "width": 2048,
+      "height": 393,
+      "format": "jpeg",
+      "alpha": false
+    },
+    {
+      "file": "jpg/logo-horizontal-fond-creme-2048.jpg",
+      "width": 2048,
+      "height": 393,
+      "format": "jpeg",
+      "alpha": false
+    },
+    {
+      "file": "jpg/repere-fond-blanc-2048.jpg",
+      "width": 2048,
+      "height": 2048,
+      "format": "jpeg",
+      "alpha": false
+    },
+    {
+      "file": "jpg/repere-fond-creme-2048.jpg",
+      "width": 2048,
+      "height": 2048,
+      "format": "jpeg",
+      "alpha": false
+    },
+    {
+      "file": "jpg/symbole-fond-blanc-2048.jpg",
+      "width": 2048,
+      "height": 658,
+      "format": "jpeg",
+      "alpha": false
+    },
+    {
+      "file": "jpg/symbole-fond-creme-2048.jpg",
+      "width": 2048,
+      "height": 658,
+      "format": "jpeg",
+      "alpha": false
+    },
+    {
+      "file": "icones/icone-16.png",
+      "width": 16,
+      "height": 16,
+      "format": "png",
+      "alpha": true
+    },
+    {
+      "file": "icones/icone-180.png",
+      "width": 180,
+      "height": 180,
+      "format": "png",
+      "alpha": true
+    },
+    {
+      "file": "icones/icone-192.png",
+      "width": 192,
+      "height": 192,
+      "format": "png",
+      "alpha": true
+    },
+    {
+      "file": "icones/icone-32.png",
+      "width": 32,
+      "height": 32,
+      "format": "png",
+      "alpha": true
+    },
+    {
+      "file": "icones/icone-48.png",
+      "width": 48,
+      "height": 48,
+      "format": "png",
+      "alpha": true
+    },
+    {
+      "file": "icones/icone-512.png",
+      "width": 512,
+      "height": 512,
+      "format": "png",
+      "alpha": true
+    },
+    {
+      "file": "icones/icone-maskable-512.png",
+      "width": 512,
+      "height": 512,
+      "format": "png",
+      "alpha": true
+    }
+  ]
+}
