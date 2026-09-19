@@ -22,5 +22,9 @@
   },
   "observability": {
     "enabled": true
+  },
+  "vars": {
+    "RESEND_FROM_EMAIL": "Signature Convoyage <contact@signature-convoyage.fr>",
+    "RESEND_TO_EMAIL": "contact@signature-convoyage.fr"
   }
 }

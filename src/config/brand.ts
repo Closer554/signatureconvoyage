@@ -6,7 +6,7 @@ export const brand = {
   foundingYear: null as number | null,
   experienceYears: null as number | null,
   phone: null as string | null,
-  email: "contact@paris-service-voiturier.com" as string | null,
+  email: "contact@signature-convoyage.fr",
   address: "5 Avenue Chausson, 92230 Gennevilliers, France" as string | null,
   responseSlaMinutes: null as number | null,
   businessHours: [] as BusinessHours[],

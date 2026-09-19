@@ -19,3 +19,32 @@ export const quoteSchema = z.object({
 });
 
 export type QuoteData = z.infer<typeof quoteSchema>;
+
+const contactFields = {
+  firstname: z.string().trim().min(1, "Indiquez votre prénom").max(100),
+  lastname: z.string().trim().min(1, "Indiquez votre nom").max(100),
+  phone: z.string().trim().min(6, "Numéro incomplet").max(40),
+  email: z.string().trim().email("Adresse e-mail invalide").max(254),
+  message: z.string().trim().min(1, "Décrivez votre besoin").max(5_000),
+  consent: z.literal(true, { message: "Votre accord est nécessaire" }),
+};
+
+export const contactSchema = z.discriminatedUnion("type", [
+  z.object({ type: z.literal("contact"), ...contactFields }),
+  z.object({
+    type: z.literal("b2b"),
+    ...contactFields,
+    company: z.string().trim().min(1, "Indiquez votre société").max(200),
+    volume: z.string().trim().max(100).optional(),
+  }),
+  z.object({
+    type: z.literal("driver"),
+    ...contactFields,
+    city: z.string().trim().min(1, "Indiquez votre ville").max(200),
+    radius: z.string().trim().min(1, "Indiquez votre rayon de mobilité").max(200),
+    status: z.enum(["Micro-entreprise", "Société", "En création"]),
+    licence: z.string().trim().min(1, "Indiquez votre ancienneté de permis").max(100),
+  }),
+]);
+
+export type ContactData = z.infer<typeof contactSchema>;

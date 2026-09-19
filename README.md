@@ -20,7 +20,7 @@ npm run build
 - `src/content/site.ts` : services, qualité et cas d’usage
 - `src/data/network.ts` : points de la carte
 - `src/data/testimonials.ts` : témoignages autorisés uniquement
-- `src/lib/lead-service.ts` : envoi des demandes de devis par Resend
+- `src/lib/lead-service.ts` : envoi des demandes de devis, de contact et professionnelles par Resend
 
 ## Personnalisation
 
@@ -41,18 +41,24 @@ Vérifier que l’URL absolue indiquée dans la balise `og:image` renvoie bien l
 
 ## Formulaires et e-mails
 
-Le devis utilise la route serveur `/api/leads` et le SDK Resend. La clé API reste côté serveur et chaque demande est envoyée dans un e-mail HTML, accompagné d’une version texte. L’adresse du demandeur est configurée comme adresse de réponse.
+Le devis utilise la route serveur `/api/leads` ; les formulaires de contact et professionnels utilisent `/api/contact`. Les données et l’accord de confidentialité sont validés côté serveur avant l’envoi par Resend. Chaque demande est envoyée dans un e-mail HTML accompagné d’une version texte, avec un objet distinct selon le formulaire. L’adresse du demandeur est configurée comme adresse de réponse. Le succès n’est affiché qu’après confirmation de Resend.
 
-Copier `.env.example` vers `.env.local`, puis renseigner `RESEND_API_KEY`, `RESEND_FROM_EMAIL` et `RESEND_TO_EMAIL`. Le domaine de `RESEND_FROM_EMAIL` doit être vérifié dans Resend. En l’absence de configuration ou si Resend refuse l’envoi, le formulaire retourne une erreur et n’affiche pas de faux succès.
+En local, copier `.env.example` vers `.env.local`, puis renseigner `RESEND_API_KEY`. Les adresses `RESEND_FROM_EMAIL` et `RESEND_TO_EMAIL` sont configurées sur `contact@signature-convoyage.fr`. Sans destinataire explicite, l’adresse de contact définie dans `src/config/brand.ts` est utilisée. Le domaine de l’expéditeur doit être vérifié dans Resend : `onboarding@resend.dev` est réservé aux tests vers l’adresse du titulaire du compte. En l’absence de configuration ou si Resend refuse l’envoi, le formulaire retourne une erreur et conserve les saisies.
 
-Les formulaires courts sont encore des démonstrations front-end et doivent être raccordés à un service avant publication. Valider également les durées de conservation et la conformité RGPD des demandes envoyées par e-mail.
+Sur Cloudflare, les adresses d’expédition et de réception sont définies dans `wrangler.jsonc`. Configurer la clé privée sur le Worker `signatureconvoyage` avec `npx wrangler secret put RESEND_API_KEY`, puis déployer avec `npm run deploy`. Ne pas ajouter la clé API au dépôt. Les variables locales `.env` ne remplacent pas la configuration des secrets du Worker. Si d’anciens secrets `RESEND_FROM_EMAIL` ou `RESEND_TO_EMAIL` existent sur le Worker, les remplacer par les variables correspondantes avant le déploiement.
+
+Le formulaire de candidature `/devenir-convoyeur` est hébergé par Jotform (formulaire `262104829585059`) et n’utilise pas Resend. Dans l’éditeur Jotform, ouvrir **Settings → Emails → Notification Email → Recipients**, renseigner `contact@signature-convoyage.fr` dans **Recipient Email**, puis enregistrer. Cette configuration est gérée dans le compte Jotform et ne peut pas être changée dans le code d’intégration du site. Guide : https://www.jotform.com/help/41-how-to-change-the-email-address-used-for-notification-email/.
+
+Vérifier la réception réelle des notifications après validation du domaine et déploiement, ainsi que celle des candidatures après le réglage Jotform.
+
+Tests des formulaires (Node.js ≥ 22.15) : `node scripts/test-forms.mjs`. Ils vérifient la validation, les destinataires, le contenu des e-mails et les échecs de transmission avec Resend simulé, sans envoi réel ni clé API.
 
 ## Avant mise en production
 
 - [ ] Nom définitif
 - [ ] Logo définitif
 - [ ] Téléphone
-- [ ] E-mail
+- [x] E-mail de contact et destinataire des formulaires locaux
 - [ ] Horaires
 - [ ] SLA réel
 - [ ] Couverture réelle
@@ -64,7 +70,8 @@ Les formulaires courts sont encore des démonstrations front-end et doivent êtr
 - [ ] Logos clients autorisés
 - [ ] Statistiques vérifiées
 - [ ] Configuration Resend testée en production
-- [ ] Service d’envoi raccordé aux autres formulaires
+- [x] Service d’envoi raccordé aux formulaires de contact et professionnels
+- [ ] Destinataire des notifications Jotform configuré
 - [ ] Domaine et URL `metadataBase`, sitemap et robots
 - [ ] Analytics et consentement éventuel
 - [ ] Test réel des notifications et du traitement des erreurs
