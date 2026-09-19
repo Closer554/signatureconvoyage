@@ -16,7 +16,7 @@ type Props = {
   error?: string;
   placeholder: string;
   onChange: (value: string) => void;
-  onSelectionChange: (selected: boolean) => void;
+  onSelectionChange?: (selected: boolean) => void;
 };
 
 export function VehicleAutocomplete({
@@ -86,7 +86,7 @@ export function VehicleAutocomplete({
     requestId.current += 1;
     skipNextSearch.current = true;
     onChange(suggestion.label);
-    onSelectionChange(true);
+    onSelectionChange?.(true);
     setSuggestions([]);
     setOpen(false);
   };
@@ -129,7 +129,7 @@ export function VehicleAutocomplete({
           onChange={(event) => {
             const nextValue = event.target.value;
             onChange(nextValue);
-            onSelectionChange(false);
+            onSelectionChange?.(false);
             if (!nextValue.trim()) {
               requestId.current += 1;
               setSuggestions([]);
@@ -163,7 +163,9 @@ export function VehicleAutocomplete({
             ))}
             {!loading && suggestions.length === 0 && (
               <span className="address-message">
-                {failed ? "Catalogue indisponible. Réessayez dans un instant." : "Aucun résultat"}
+                {resource === "models"
+                  ? `${failed ? "Suggestions indisponibles." : "Aucun résultat."} Vous pouvez conserver le modèle saisi.`
+                  : failed ? "Catalogue indisponible. Réessayez dans un instant." : "Aucun résultat"}
               </span>
             )}
           </span>
